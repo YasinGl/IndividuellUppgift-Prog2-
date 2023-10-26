@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Weather for Latitude: {{ weather_data.latitude }}, Longitude: {{ weather_data.longitude }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Weather for Latitude: {{ weather_data.latitude }}, Longitude: {{ weather_data.longitude }}</h1>
+
+        <h2>Current Weather</h2>
+        <p>Time: {{ weather_data.current.time }}</p>
+        <p>Temperature at 2m: {{ weather_data.current.temperature_2m }}</p>
+        <p>Windspeed at 10m: {{ weather_data.current.windspeed_10m }}</p>
+
+        <h2>Hourly Weather</h2>
+        {% include "table.html" %}
+    </div>
+{% endblock %}
